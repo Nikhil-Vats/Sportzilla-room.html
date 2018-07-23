@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chat | ChatApp</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, iinitial-scale=1,user-scalable=no ">
+    <style>
+        #header {
+            background-color: 
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Anagram by CODING CLUB!</h1>
+    </div>
+    <div class="chat_room">
+    <div class="chat__sidebar">
+        <h3>People</h3>
+        <div id="users"></div>
+    </div>
+    <div class="chat__main">
+         <ol id="messages" class="chat__messages">
+        
+         </ol>
+    <div class="chat__footer">
+     <form id="message-form">
+    <input class="inputArea" name="message" type="text" placeholder="Message" autofocus autocomplete="off"/>    
+    <button class="sendButton">Send</button>   
+     </form>
+    </div>
+    </div> 
+    <div class="room_info">
+        <div class="leaderboard">
+            <div class="userNames">
+                <ol class="users__list">
+                </ol>
+            </div>
+            <div class="topScores">
+                <ol class="scores__list">
+                </ol>
+            </div>
+        </div>
+        <div class="user__info">   
+            <ul class="userInfoList">
+                <li class="displayInfo">
+                </li>
+            </ul>
+            <button class="logoutButton">LOGOUT</button>
+        </div>
+    </div>    
+    </div>
+    <script  type="text/javascript">
+        var Users = ['User One','User Two','User Three','User Four','User One','User Two','User Three','User Four','User One','User Two','User Three','User Four','User One','User Two','User Three','User Four'];
+        var Senders = ['User One', 'User Two', 'User Three','User One', 'User Two', 'User Three','User One', 'User Two', 'User Three','User One', 'User Two', 'User Three'];
+        var messages = [
+            'Hey guys!',
+            'Hello, how are you?',
+            'I am on first position, get your game up loosers!',
+            'Hey guys!',
+            'Hello, how are you?',
+            'I am on first position, get your game up loosers!',
+            'Hey guys!',
+            'Hello, how are you?',
+            'I am on first position, get your game up loosers!',
+            'Hey guys!',
+            'Hello, how are you?',
+            'I am on first position, get your game up loosers!'
+        ];
+        var createdAt = ['12:01 AM','01:10 AM','05:30 PM','12:01 AM','01:10 AM','05:30 PM','12:01 AM','01:10 AM','05:30 PM','12:01 AM','01:10 AM','05:30 PM'];
+        
+        var topUserNames = ['Mike','Andrew','Russel','Sean','Justin','Peter','John','Mathew','David','Chris'];
+        var topUserScores = ['170','150','100','90','80','78','75','65','64','60'];
+        
+        var UserInfo = {
+            Name:'Nikhil Vats',
+            Score:'50'
+        };
+        
+        //TO DISPLAY USERS
+        var usersDiv = document.getElementById('users');
+        var usersList = document.createElement('ol');
+        usersList.style.listStyleType = 'none';
+        for(var i=0; i<Users.length; i++) {
+            var user = document.createElement('li');
+            user.className = 'OnlineUsersList';
+            var textNode = document.createTextNode(Users[i]);
+            user.appendChild(textNode);
+            usersList.appendChild(user);
+            usersDiv.appendChild(usersList);
+        }
+        //TO DISPLAY MESSAGES
+        for(var j=0; j<messages.length; j++) {
+            var messageList = document.createElement('li');
+            messageList.className = 'message';
+            var titleDiv = document.createElement('div');
+            titleDiv.className = 'message__title';
+            var Sender = document.createElement('h4');
+            var time = document.createElement('span');
+            var messageBody = document.createElement('div');
+            messageBody.className = 'message__body';
+            var text = document.createElement('p');
+            
+            var senderText = document.createTextNode(Senders[j]);
+            var messageText = document.createTextNode(messages[j]);
+            var timeText = document.createTextNode(createdAt[j]);
+            Sender.appendChild(senderText);
+            time.appendChild(timeText);
+            text.appendChild(messageText);
+            
+            titleDiv.appendChild(Sender);
+            titleDiv.appendChild(time);
+            messageList.appendChild(titleDiv);
+            
+            messageBody.appendChild(text);
+            messageList.appendChild(messageBody);
+            var messageMainList = document.getElementById('messages'); 
+            messageMainList.appendChild(messageList);
+        }
+        //TO DISPLAY LEADERBOARD AND PLAYER INFO
+        var userNames = document.getElementsByClassName('userNames')[0];
+        var scores = document.getElementsByClassName('topScores')[0];
+        var usersList = document.getElementsByClassName('users__list')[0];
+        var scoresList = document.getElementsByClassName('scores__list')[0];
+        for(var k=0; k<topUserNames.length; k++) {
+            var list = document.createElement('li');
+            var userNamesText = document.createTextNode(topUserNames[k]);
+            list.className = 'userListElement';
+            list.appendChild(userNamesText);
+            usersList.appendChild(list);
+            
+            var scores = document.createElement('li');
+            var scoresText = document.createTextNode(topUserScores[k]);
+            scores.className = 'scoresElement';
+            scores.appendChild(scoresText);
+            scoresList.appendChild(scores);
+        }
+        
+        var Info = document.getElementsByClassName('user__info')[0];
+        var userInfolist = document.getElementsByClassName('userInfoList')[0];
+        var displayInfo = document.getElementsByClassName('displayInfo')[0];
+//        var NameNode = document.createTextNode(UserInfo.Name);
+//        var ScoreNode = document.createTextNode(UserInfo.Score);
+        
+        var infoMessage = document.createElement('p');
+        infoMessage.className = 'infoText';
+        var infoText = document.createTextNode(`Hey ${UserInfo.Name}, your score is ${UserInfo.Score}`);
+        infoMessage.appendChild(infoText);
+        displayInfo.appendChild(infoMessage);
+        userInfolist.appendChild(displayInfo);
+        Info.appendChild(userInfolist);
+        
+    </script>
+    
+</body>
+</html>

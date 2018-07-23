@@ -1,0 +1,325 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  font-size: .95rem;
+}
+body {
+    overflow: hidden;
+    font-family: "Trebuchet MS";
+}
+ul, li {
+  list-style-position: inside;
+}
+
+h3 {
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+button {
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  transition: background .3s ease;
+}
+
+
+.header {
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100vw;
+    height: 10vh;
+    padding: 1vw;
+    background-color: #282828;
+    color: #240090;
+    font-size: 6vw;
+    text-align: center;
+    border:0.5vw solid #240090;
+}
+.header h1 {
+    font-size:2vw;
+    color:#3500D3;
+}
+.chat_room {
+    margin-top: 10vh;
+    height: 90vh;
+    width:100vw;
+    left:0;
+    display: flex;
+    flex-direction: row;
+}
+.OnlineUsersList {
+    background-color: black;
+    color: white;
+}
+.chat__sidebar {
+  overflow-y: scroll;
+  width: 20vw;
+  height: 100%;
+  background-color: black;    
+}
+
+.chat__sidebar h3 {
+  color: #3500D3;
+  margin: 10px 20px;
+  text-align: left;
+}
+
+.chat__sidebar ul {
+  list-style-type: none;
+}
+
+.chat__sidebar li {
+  background: #3500D3;
+  border: 1px solid #240090;
+  border-radius: 1vw;
+  padding: 10px;
+  margin: 10px;
+  transition: 0.2s ease-in-out;    
+}
+
+.chat__sidebar li:hover {
+  background: #240090;
+}
+.chat__sidebar::-webkit-scrollbar {
+    background-color: #190061;
+}
+
+.chat__sidebar::-webkit-scrollbar-thumb {
+    background-color: #3500D3;
+}
+.chat__sidebar::-webkit-scrollbar-button {
+    background-color: #240090;
+}
+
+.chat__main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 40vw;
+/*  background-image: url('https://xshyfc.com/wp-content/uploads/data/2018/3/19/Coding-Wallpaper-HDmost-popular-coding-wallpaper-hd-1080x1920-pc-PIC-WPXH614596.jpg');*/
+  background-color: black;
+}
+.chat__messages::-webkit-scrollbar {
+    background-color: #190061;
+}
+.chat__messages::-webkit-scrollbar-thumb {
+    background-color: #3500D3;
+}
+.chat__messages::-webkit-scrollbar-button {
+    background-color: #240090;
+}
+.chat__messages {
+  flex-grow: 1;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.chat__footer {
+  background: #190061;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  flex-shrink: 0;
+}
+
+.chat__footer form {
+  flex-grow: 1;
+  display: flex;
+}
+
+.chat__footer form * {
+  margin-right: 10px;
+      
+}
+
+.chat__footer input {
+  border: none;
+  padding: 10px;
+  flex-grow: 1;   
+  width: 100%;  
+  max-width:80%;            
+}
+
+.chat__messages {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.message {
+  padding: 10px;
+  background-color: #3500D3;    
+  color: white;
+  font-weight: 400;    
+  margin: 10px 0;
+  border-radius: 1vw;   
+  border:1px solid #282828;
+  transition: 0.1s ease-in-out;    
+}
+
+.message:hover {
+    background-color: #240090;
+}
+
+.inputArea {
+    background-color: black;
+    color: white;
+    font-weight: 400;
+}
+
+.inputArea:focus {
+    border: 2px solid #3500D3;
+}
+
+.sendButton {
+    width: 25%;
+    background-color: #3500D3;
+    color: white;
+    font-weight: 400;
+    border-radius: 3px;
+    transition: 0.1s ease-in-out;
+    box-sizing: border-box;
+    font-size: 1.5vw;
+}
+.sendButton:hover {
+    background-color: #240090;
+}
+.message__title {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.message__title h4 {
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.message__title span {
+  color: #999;
+}
+.room_info {
+  width: 40vw;
+  background-color: #282828
+}
+.leaderboard {
+    max-height: 80vh;
+    margin-top:0;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+}
+.leaderboard::-webkit-scrollbar {
+    background-color: #190061;
+}
+.leaderboard::-webkit-scrollbar-thumb {
+    background-color: #3500D3;
+}
+.leaderboard::-webkit-scrollbar-button {
+    background-color: #240090;
+}
+.leaderboard .userNames {
+    width: 33vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+.leaderboard .topScores {
+    width: 7vw;
+    color: black;
+}
+.users__list {
+    list-style-type: upper-roman;
+}
+.scores__list {
+    list-style-type: none;
+}
+.userListElement {
+    background-color: black;
+    border-radius: 0.5vw;
+    margin: 1vh 1vw;
+    padding: 10px;
+    font-size: 1.5vw;
+    transition: 0.2s ease-in-out;
+}
+.userListElement:hover {
+    background-color: #3500D3;
+}
+.scoresElement {
+    background-color: black;
+    color: #3500D3;
+    border-radius: 0.5vw;
+    padding: 10px;
+    margin: 1vh 1vw;
+    font-size: 1.5vw;
+    transition: 0.2s ease-in-out;
+}
+.scoresElement:hover {
+    background-color: #190061;
+    color: white;
+}
+.user__info {
+    padding: 10px;
+    height: 10vh;
+    width: 40vw;
+    color: white;
+    background-color: black;
+    bottom: 0;
+    position: absolute;
+}
+.userInfoList {
+    list-style-type: none;
+    width: 30vw;
+    height: 8vh;
+}
+.displayInfo {
+    background-color: #282828;
+    border-radius: 1vw;
+    height: 7vh;
+    padding: 10px;
+    transition: 0.2s ease-in-out;
+}
+
+.displayInfo:hover {
+    background-color: #3500D3;
+}
+
+.infoText {
+    font-size: 1.8vw;
+    text-align: center;
+}
+
+.logoutButton {
+    background-color: #3500D3;
+    color: white;
+    right: 0;
+    position: absolute;
+    width: 8vw;
+    margin: 0 auto;
+    height: 7vh;
+    border-radius: 1vw;
+    font-size: 1.4vw;
+    transition: 0.2s ease-in-out;
+    font-weight: 100;
+}
+.logoutButton:hover {
+    background-color: #240090;
+}
+@media (max-width: 600px) {
+  * {
+    font-size: 1rem;
+  }
+
+  .chat__footer form {
+    margin-bottom: 10px;
+  }
+
+  .chat__footer button {
+    margin-right: 0px;
+  }
+}
